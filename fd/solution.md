@@ -38,4 +38,10 @@ int fd = open("example.txt", O_RDONLY);
 Inheritance: file descriptor สามารถถูกส่งต่อให้กับกระบวนการลูก (child process) เมื่อมีการสร้างกระบวนการใหม่ (ผ่าน fork()) หากไม่ได้ระบุให้ปิดโดยชัดเจน<br />
 Duplication: file descriptor สามารถถูกทำสำเนาได้ด้วย dup() หรือ dup2() เพื่อให้หลาย ๆ descriptor อ้างอิงไปที่ไฟล์หรือทรัพยากรเดียวกัน<br />
 
+-----------------------------------------<br />
+solusion<br />
+-----------------------------------------<br />
+เราต้องทำให้ fd = 0 เพื่อใช้ func อ่านข้อมูล<br />
+ดังนั้น ต้องใส่ arg = 0x1234 หรือ 4660<br />
+และพิม LETMEWIN เพื่อให้ตรงกับ condition และจะได้ flag<br />
 <img width="595" alt="Screenshot 2567-10-10 at 13 20 19" src="https://github.com/user-attachments/assets/2a8fc211-d2ce-423a-a21d-18027d9aa7bf">
